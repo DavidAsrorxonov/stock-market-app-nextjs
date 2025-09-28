@@ -45,6 +45,23 @@ const SignUpPage = () => {
           error={errors.fullName}
           validation={{ required: "Full name is required", minLength: 2 }}
         />
+        <InputField
+          name="email"
+          label="Email"
+          placeholder="johndoe@gmail.com"
+          register={register}
+          error={errors.email}
+          validation={{ required: "Email is required", pattern: /^\S+@\S+$/i }}
+        />
+        <InputField
+          name="password"
+          label="Password"
+          placeholder={"Enter your password"}
+          type="password"
+          register={register}
+          error={errors.password}
+          validation={{ required: "Password is required", minLength: 8 }}
+        />
 
         <Button
           type="submit"
