@@ -11,6 +11,7 @@ import {
 } from "./ui/dropdown-menu";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { User } from "@/types/userType";
 
 const UserDropdown = () => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const UserDropdown = () => {
     router.push("/sign-in");
   };
 
-  const user: { name: string; email: string } = {
+  const user: User = {
     name: "John Doe",
     email: "john@example.com",
   };
