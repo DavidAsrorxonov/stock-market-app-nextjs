@@ -1,3 +1,4 @@
+import { testimonial } from "@/lib/constants/testimonial";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -21,7 +22,25 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <section className="auth-right-section">
         <div className="z-10 relative lg:mt-4 lg:mb-16">
-          <blockquote className="auth-blockquote"></blockquote>
+          <blockquote className="auth-blockquote">{testimonial}</blockquote>
+
+          <div className="flex items-center justify-between">
+            <cite className="auth-testimonial-author">- Ethan R.</cite>
+            <p className="max-md:text-xs text-gray-500">Retail Investor</p>
+          </div>
+
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <Image
+                src={"/assets/icons/star.svg"}
+                alt="Star"
+                key={star}
+                width={20}
+                height={20}
+                className="w-5 h-5"
+              />
+            ))}
+          </div>
         </div>
       </section>
     </main>
