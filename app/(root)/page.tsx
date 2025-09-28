@@ -1,7 +1,10 @@
 import TradingViewWidget from "@/components/TradingViewWidget";
 import { Button } from "@/components/ui/button";
+import { HEATMAP_WIDGET_CONFIG } from "@/lib/constants/heatmapOverviewWidgetConfig";
+import { MARKET_DATA_WIDGET_CONFIG } from "@/lib/constants/marketOverviewDataConfig";
 import { MARKET_OVERVIEW_WIDGET_CONFIG } from "@/lib/constants/marketOverviewWidgetConfig";
 import { SCRIPT_URLS } from "@/lib/constants/scriptsUrls";
+import { TOP_STORIES_WIDGET_CONFIG } from "@/lib/constants/topStoriesWidgetConfig";
 import Image from "next/image";
 
 export default function Home() {
@@ -22,6 +25,24 @@ export default function Home() {
             title="Stock Heatmap"
             scriptUrl={SCRIPT_URLS.STOCK_HEATMAP}
             config={MARKET_OVERVIEW_WIDGET_CONFIG}
+            height={600}
+          />
+        </div>
+      </section>
+
+      <section className="grid w-full gap-8 home-section">
+        <div className="h-full md:col-span-1 xl:col-span-1">
+          <TradingViewWidget
+            scriptUrl={SCRIPT_URLS.TIMELINE}
+            config={TOP_STORIES_WIDGET_CONFIG}
+            height={600}
+          />
+        </div>
+
+        <div className="h-full md:col-span-1 xl:col-span-2">
+          <TradingViewWidget
+            scriptUrl={SCRIPT_URLS.MARKET_QUOTES}
+            config={MARKET_DATA_WIDGET_CONFIG}
             height={600}
           />
         </div>

@@ -5,4 +5,8 @@ export const SCRIPT_URLS: ScriptUrls = {
     "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js",
   STOCK_HEATMAP:
     "https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js",
+  TIMELINE:
+    "https://s3.tradingview.com/external-embedding/embed-widget-timeline.js",
+  MARKET_QUOTES:
+    "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js",
 };

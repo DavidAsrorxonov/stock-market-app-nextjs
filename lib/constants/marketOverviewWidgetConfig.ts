@@ -1,6 +1,6 @@
 import { MarketOverviewWidgetConfig } from "@/types/marketOverviewWidgetConfig";
 
-export const MARKET_OVERVIEW_WIDGET_CONFIG: MarketOverviewWidgetConfig = {
+export const MARKET_OVERVIEW_WIDGET_CONFIG = {
   colorTheme: "dark", // dark mode
   dateRange: "12M", // last 12 months
   locale: "en", // language
