@@ -1,6 +1,7 @@
 import TradingViewWidget from "@/components/TradingViewWidget";
 import { Button } from "@/components/ui/button";
 import { MARKET_OVERVIEW_WIDGET_CONFIG } from "@/lib/constants/marketOverviewWidgetConfig";
+import { SCRIPT_URLS } from "@/lib/constants/scriptsUrls";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,7 +11,16 @@ export default function Home() {
         <div className="md:col-span-1 xl:col-span-1">
           <TradingViewWidget
             title="Market Overview"
-            scriptUrl="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
+            scriptUrl={SCRIPT_URLS.MARKET_OVERVIEW}
+            config={MARKET_OVERVIEW_WIDGET_CONFIG}
+            height={600}
+          />
+        </div>
+
+        <div className="md:col-span-1 xl:col-span-2">
+          <TradingViewWidget
+            title="Stock Heatmap"
+            scriptUrl={SCRIPT_URLS.STOCK_HEATMAP}
             config={MARKET_OVERVIEW_WIDGET_CONFIG}
             height={600}
           />
