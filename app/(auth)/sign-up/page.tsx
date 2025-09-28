@@ -4,6 +4,8 @@ import InputField from "@/components/forms/InputField";
 import SelectField from "@/components/forms/SelectField";
 import { Button } from "@/components/ui/button";
 import { INVESTMENT_GOALS } from "@/lib/constants/investmentGoals";
+import { PREFERRED_INDUSTRIES } from "@/lib/constants/preferredIndustries";
+import { RISK_TOLERANCE_OPTIONS } from "@/lib/constants/riskToleranceOptions";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -73,6 +75,24 @@ const SignUpPage = () => {
           options={INVESTMENT_GOALS}
           control={control}
           error={errors.investmentGoals}
+        />
+
+        <SelectField
+          name="riskTolerance"
+          label="Risk Tolerance"
+          placeholder="Select your Risk Level"
+          options={RISK_TOLERANCE_OPTIONS}
+          control={control}
+          error={errors.riskTolerance}
+        />
+
+        <SelectField
+          name="preferredIndustry"
+          label="Preferred Industry"
+          placeholder="Select your Preferred Industry"
+          options={PREFERRED_INDUSTRIES}
+          control={control}
+          error={errors.preferredIndustry}
         />
 
         <Button
