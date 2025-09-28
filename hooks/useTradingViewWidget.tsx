@@ -1,10 +1,11 @@
 "use client";
 
+import { MarketOverviewWidgetConfig } from "@/types/marketOverviewWidgetConfig";
 import { useEffect, useRef } from "react";
 
 const useTradingViewWidget = (
   scriptUrl: string,
-  config: Record<string, unknown>,
+  config: MarketOverviewWidgetConfig,
   height: number = 600
 ) => {
   const containerRef = useRef<HTMLDivElement | null>(null);

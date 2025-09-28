@@ -1,15 +1,23 @@
 // TradingViewWidget.jsx
 "use client";
 
+import useTradingViewWidget from "@/hooks/useTradingViewWidget";
+import { TradingViewWidgetProps } from "@/types/marketOverviewWidgetConfig";
 import React, { useEffect, useRef, memo } from "react";
 
-function TradingViewWidget() {
-  const container: any = useRef(null);
+function TradingViewWidget({
+  title,
+  scriptUrl,
+  config,
+  height = 600,
+  className,
+}: TradingViewWidgetProps) {
+  const containerRef = useTradingViewWidget(scriptUrl, config, height);
 
   return (
     <div
       className="tradingview-widget-container"
-      ref={container}
+      ref={containerRef}
       style={{ height: "100%", width: "100%" }}
     >
       <div

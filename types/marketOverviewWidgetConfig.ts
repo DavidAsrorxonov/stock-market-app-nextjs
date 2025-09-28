@@ -1,24 +1,42 @@
-export type MARKET_OVERVIEW_WIDGET_CONFIG_TYPE = {
-  allow_symbol_change: boolean;
-  calendar: boolean;
-  details: boolean;
-  hide_side_toolbar: boolean;
-  hide_top_toolbar: boolean;
-  hide_legend: boolean;
-  hide_volume: boolean;
-  hotlist: boolean;
-  interval: string;
+interface Symbol {
+  s: string; // symbol code
+  d: string; // display name/description
+}
+
+interface Tab {
+  title: string;
+  symbols: Symbol[];
+}
+
+export interface MarketOverviewWidgetConfig {
+  colorTheme: string;
+  dateRange: string;
   locale: string;
-  save_image: boolean;
-  style: string;
-  symbol: string;
-  theme: string;
-  timezone: string;
+  largeChartUrl: string;
+  isTransparent: boolean;
+  showFloatingTooltip: boolean;
+  plotLineColorGrowing: string;
+  plotLineColorFalling: string;
+  gridLineColor: string;
+  scaleFontColor: string;
+  belowLineFillColorGrowing: string;
+  belowLineFillColorFalling: string;
+  belowLineFillColorGrowingBottom: string;
+  belowLineFillColorFallingBottom: string;
+  symbolActiveColor: string;
+  tabs: Tab[];
+  support_host: string;
   backgroundColor: string;
-  gridColor: string;
-  watchlist: string[];
-  withdateranges: boolean;
-  compareSymbols: string[];
-  studies: string[];
-  autosize: boolean;
-};
+  width: string;
+  height: number;
+  showSymbolLogo: boolean;
+  showChart: boolean;
+}
+
+export interface TradingViewWidgetProps {
+  title?: string;
+  scriptUrl: string;
+  config: MarketOverviewWidgetConfig;
+  height?: number;
+  className?: string;
+}
