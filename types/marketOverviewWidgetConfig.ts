@@ -1,0 +1,24 @@
+export type MARKET_OVERVIEW_WIDGET_CONFIG_TYPE = {
+  allow_symbol_change: boolean;
+  calendar: boolean;
+  details: boolean;
+  hide_side_toolbar: boolean;
+  hide_top_toolbar: boolean;
+  hide_legend: boolean;
+  hide_volume: boolean;
+  hotlist: boolean;
+  interval: string;
+  locale: string;
+  save_image: boolean;
+  style: string;
+  symbol: string;
+  theme: string;
+  timezone: string;
+  backgroundColor: string;
+  gridColor: string;
+  watchlist: string[];
+  withdateranges: boolean;
+  compareSymbols: string[];
+  studies: string[];
+  autosize: boolean;
+};
