@@ -1,3 +1,4 @@
+import { ReturnType } from "@/types/sendEmailFunctionReturn";
 import { inngest } from "./client";
 import { PERSONALIZED_WELCOME_EMAIL_PROMPT } from "./prompts";
 
@@ -6,7 +7,7 @@ export const sendSignUpEmail = inngest.createFunction(
     id: "sign-up-email",
   },
   { event: "app/user.created" },
-  async ({ event, step }) => {
+  async ({ event, step }): Promise<ReturnType> => {
     const userProfile = `
         - Country: ${event.data.country}
         - Investment Goals: ${event.data.investmentGoals}
@@ -38,5 +39,10 @@ export const sendSignUpEmail = inngest.createFunction(
         (part && "text" in part ? part.text : null) ||
         "Thanks for jioing Signalist! You now have the tools to track markets and make smarter moves.";
     });
+
+    return {
+      success: true,
+      message: "Welcome email sent successfully",
+    };
   }
 );
