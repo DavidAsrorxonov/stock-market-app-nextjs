@@ -1,6 +1,7 @@
 import { ReturnType } from "@/types/sendEmailFunctionReturn";
 import { inngest } from "./client";
 import { PERSONALIZED_WELCOME_EMAIL_PROMPT } from "./prompts";
+import { sendWelcomeEmail } from "../nodemailer";
 
 export const sendSignUpEmail = inngest.createFunction(
   {
@@ -38,6 +39,15 @@ export const sendSignUpEmail = inngest.createFunction(
       const introText =
         (part && "text" in part ? part.text : null) ||
         "Thanks for jioing Signalist! You now have the tools to track markets and make smarter moves.";
+
+      const {
+        data: { email, name },
+      } = event;
+      return await sendWelcomeEmail({
+        email,
+        name,
+        intro: introText,
+      });
     });
 
     return {
