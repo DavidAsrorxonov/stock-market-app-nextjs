@@ -1,11 +1,8 @@
 import TradingViewWidget from "@/components/TradingViewWidget";
-import { Button } from "@/components/ui/button";
-import { HEATMAP_WIDGET_CONFIG } from "@/lib/constants/heatmapOverviewWidgetConfig";
 import { MARKET_DATA_WIDGET_CONFIG } from "@/lib/constants/marketOverviewDataConfig";
 import { MARKET_OVERVIEW_WIDGET_CONFIG } from "@/lib/constants/marketOverviewWidgetConfig";
 import { SCRIPT_URLS } from "@/lib/constants/scriptsUrls";
 import { TOP_STORIES_WIDGET_CONFIG } from "@/lib/constants/topStoriesWidgetConfig";
-import Image from "next/image";
 
 export default function Home() {
   return (
