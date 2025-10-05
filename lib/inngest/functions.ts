@@ -56,3 +56,21 @@ export const sendSignUpEmail = inngest.createFunction(
     };
   }
 );
+
+export const sendDailyNewsSummary = inngest.createFunction(
+  {
+    id: "daily-news-summary",
+  },
+  [
+    {
+      event: "app/send.daily.news",
+    },
+    {
+      // Send daily news summary at 12:00 PM UTC every day
+      // The cron schedule is in the format of "minute hour day month day_of_week"
+      // In this case, it means the function will be triggered at the 0th minute of the 12th hour of every day
+      cron: "0 12 * * *",
+    },
+  ],
+  async ({ step }) => {}
+);
